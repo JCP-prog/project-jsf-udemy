@@ -9,8 +9,9 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no"></meta>
 </h:head>
 <h:body>
-	<p:outputLabel value="Bienvenido a la Pantalla Principal"></p:outputLabel>
+	<p:outputLabel value="Bienvenido #{sessionController.usuarioDTO.usuario} a la Pantalla Principal"></p:outputLabel>
 	<h:form>
+		<p:commandButton value="Cerrar Sesion" action="#{sessionClosedController.cerrarSession()}"></p:commandButton>
 		<p:dataTable id="tblEmpleados" var="empleado" value="#{principalController.empleados}" rows="10" reflow="true"
 	                     paginator="true"
 	                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown} {Exporters}"
